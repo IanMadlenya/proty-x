@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <link rel="stylesheet" href="./material.min.css">
+    <script src="./material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <style>
+    .warni {
+        background: -webkit-linear-gradient(left, #6FDB9E, #56C6EE);
+        background: -o-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: -moz-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: linear-gradient(to right, #6FDB9E, #56C6EE);
+        color: white;
+    }
+    
+    .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .demo-card-square > .mdl-card__title {
+        margin-top: 20px;
+        color: #fff;
+        background: url('img/a.jpg') bottom right 15% no-repeat #46B6AC;
+        background-size: 100% 100%;
+    }
+    </style>
+</head>
+
+<body ng-app="starter">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
+        <header class="mdl-layout__header warni">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title" style="text-align: center">ProtyX</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">a</a>
+                    <a class="mdl-navigation__link" href="">s</a>
+                    <a class="mdl-navigation__link" href="">d</a>
+                    <a class="mdl-navigation__link" href="">f</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Main Menu</a>
+                <a class="mdl-navigation__link" href="">Fund</a>
+                <a class="mdl-navigation__link" href="">Rent</a>
+                <a class="mdl-navigation__link" href="">Setting</a>
+                <a class="mdl-navigation__link" href="">Log Out</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content" ng-app="iproperty">
+                <!-- Card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Condominium</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                    <ul>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">supervisor_account</i> 10 backers</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">attach_money</i> RM 300,000</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">location_on</i> Ampang</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">account_circle</i> Tenant: Haziq</span></li>
+                    </ul>
+                       
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Invest</a>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style=" background: url('img/b.jpg') bottom right 15% no-repeat #46B6AC; background-size: 100% 100%; ">
+                        <h2 class="mdl-card__title-text">2 Story House</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">supervisor_account</i> 5 backers</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">attach_money</i> RM 150,000</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">location_on</i> Puchong</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">account_circle</i> Tenant: Izzy</span></li>
+                    </ul>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="invest.html">Invest</a>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style=" background: url('img/c.jpg') bottom right 15% no-repeat #46B6AC; background-size: 100% 100%; ">
+                        <h2 class="mdl-card__title-text">Flat</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                         <ul>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">supervisor_account</i> 13 backers</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">attach_money</i> RM 70,000</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">location_on</i> Puchong</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">account_circle</i> Tenant: Wei Ynag</span></li>
+                    </ul>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Invest</a>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style=" background: url('img/d.jpg') bottom right 15% no-repeat #46B6AC; background-size: 100% 100%; ">
+                        <h2 class="mdl-card__title-text">Apartment</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">supervisor_account</i> 8 backers</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">attach_money</i> RM 250,000</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">location_on</i> Bangi</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">account_circle</i> Tenant: Izzy Ahmad</span></li>
+                    </ul>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Invest</a>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style=" background: url('img/e.jpg') bottom right 15% no-repeat #46B6AC; background-size: 100% 100%; ">
+                        <h2 class="mdl-card__title-text">Duplex</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <ul>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">supervisor_account</i> 2 backers</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">attach_money</i> RM 350,000</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">location_on</i> Bangsar</span></li>
+                    	<li> <span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">account_circle</i> Tenant: Izzy Ahmad</span></li>
+                    </ul>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Invest</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

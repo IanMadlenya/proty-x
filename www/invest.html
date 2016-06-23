@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <link rel="stylesheet" href="./material.min.css">
+    <script src="./material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <style>
+    .warni {
+        background: -webkit-linear-gradient(left, #6FDB9E, #56C6EE);
+        background: -o-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: -moz-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: linear-gradient(to right, #6FDB9E, #56C6EE);
+        color: white;
+    }
+    
+    div.meter {
+        position: relative;
+        width: 250px;
+        height: 25px;
+        border: 1px solid #b0b0b0;
+        margin-top: 50px;
+        /* viewing purposes */
+        margin-left: auto;
+        margin-right: auto;
+        /* viewing purposes */
+        -webkit-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+        -moz-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+        box-shadow: inset 0 3px 5px 0 #d3d0d0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+    }
+    
+    div.meter span {
+        display: block;
+        height: 100%;
+        animation: grower 1s linear;
+        -moz-animation: grower 1s linear;
+        -webkit-animation: grower 1s linear;
+        -o-animation: grower 1s linear;
+        position: relative;
+        top: -1px;
+        left: -1px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        border: 1px solid #3c84ad;
+        background: #6eb2d1;
+        background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+        background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+        background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+        background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+        -webkit-background-size: 45px 45px;
+        -moz-background-size: 45px 45px;
+        -o-background-size: 45px 45px;
+        background-size: 45px 45px;
+    }
+    
+    div.meter span:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        top: 50%;
+        background: rgba(0, 0, 0, 0.03);
+    }
+    
+    div.meter p {
+        position: absolute;
+        top: 0;
+        margin: 0 10px;
+        line-height: 25px;
+        font-family: 'Helvetica';
+        font-weight: bold;
+        -webkit-font-smoothing: antialised;
+        font-size: 15px;
+        color: #498b50;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+    }
+    
+    @keyframes grower {
+        0% {
+            width: 0%;
+        }
+    }
+    
+    @-moz-keyframes grower {
+        0% {
+            width: 0%;
+        }
+    }
+    
+    @-webkit-keyframes grower {
+        0% {
+            width: 0%;
+        }
+    }
+    
+    @-o-keyframes grower {
+        0% {
+            width: 0%;
+        }
+    }
+    
+    .card {
+        background: #FFF;
+        width: 300px;
+        height: 100%;
+        text-align: center;
+        padding: 0.5em;
+        margin: 1em auto;
+        border: 0;
+        color: black;
+        border-top: 5px solid #69c773;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        transition: height 1s, padding 2s, color 1s, font-size 100ms;
+    }
+    
+    button {
+        /*display: block;*/
+        border-radius: 3px;
+        border: none;
+        font-size: 2.0rem;
+        padding: 0.4rem 0.8em;
+        background: #69c773;
+        border-bottom: 1px solid #498b50;
+        color: white;
+        font-weight: bold;
+        /*margin: -70px auto;*/
+        text-align: center;
+        transition: all 1s;
+    }
+    
+    </style>
+</head>
+
+<body ng-app="starter">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
+        <header class="mdl-layout__header warni">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title" style="text-align: center">ProtyX</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">a</a>
+                    <a class="mdl-navigation__link" href="">s</a>
+                    <a class="mdl-navigation__link" href="">d</a>
+                    <a class="mdl-navigation__link" href="">f</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Main Menu</a>
+                <a class="mdl-navigation__link" href="">Fund</a>
+                <a class="mdl-navigation__link" href="">Rent</a>
+                <a class="mdl-navigation__link" href="">Setting</a>
+                <a class="mdl-navigation__link" href="">Log Out</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content" ng-app="iproperty">
+                <div>
+                    <img src="img/b.jpg" width="100%">
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <h4> 80% backed!</h4>
+                </div>
+                <div class="meter" style="margin-top: -10px;">
+                    <span style="width:72%"></span>
+                    <p></p>
+                </div>
+                <div class="card">
+                    <h6>Details</h6>
+                    <p>Built 3+. up: 968 sq.ft.
+                        <br> Layout: 3 bedrooms 2 bathrooms
+                        <br> Title type: Leasehold
+                        <br> Strata title obtained
+                        <br> Partially Furnished
+                        <br> Furnished Fittings includes: Bedding, Cabinets, Dining Table, Living Sofas with TV (Astro reception), Coffee Table,
+                        <br>Refrigerator, Water Heater & Cooking Stove.
+                        <br> Facilities:
+                        <br> •Outdoor Barbeque
+                        <br> •Children Playground
+                        <br> •24-hour Security
+                        <br>
+                    </p>
+                    
+                </div>
+                <button style="margin-left: 100px;">Invest</button>
+            </div>
+        </main>
+    </div>
+    <script>
+    var bar = $('span');
+    var p = $('p');
+
+    var width = bar.attr('style');
+    width = width.replace("width:", "");
+    width = width.substr(0, width.length - 1);
+
+
+    var interval;
+    var start = 0;
+    var end = parseInt(width);
+    var current = start;
+
+    var countUp = function() {
+        current++;
+        p.html(current + "%");
+
+        if (current === end) {
+            clearInterval(interval);
+        }
+    };
+
+    interval = setInterval(countUp, (1000 / (end + 1)));
+    </script>
+</body>
+
+</html>

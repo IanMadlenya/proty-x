@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <style>
+    body {
+        background-image: url(img/bg.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+    }
+    
+    #logo {
+        margin: 0 auto;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(left, #6FDB9E, #56C6EE);
+        background: -o-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: -moz-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: linear-gradient(to right, #6FDB9E, #56C6EE);
+        color: white;
+    }
+    
+    #sign-in {
+        width: 75%;
+        position: relative;
+        margin: 80px auto;
+    }
+    
+    .info {
+        height: 30px;
+        width: 100%;
+        display: block;
+        margin: 30px 0;
+        border-radius: 8px;
+        border: none;
+        text-align: center;
+    }
+    
+    #login {
+        width: 100%;
+        height: 35px;
+        border: none;
+        border-radius: 8px;
+        background: -webkit-linear-gradient(left, #6FDB9E, #56C6EE);
+        background: -o-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: -moz-linear-gradient(right, #6FDB9E, #56C6EE);
+        background: linear-gradient(to right, #6FDB9E, #56C6EE);
+        color: white;
+        margin-bottom: 20px;
+    }
+    
+    .form-link {
+        text-decoration: none;
+        color: white;
+        padding: 13px;
+        font-size: 14px;
+    }
+    
+    .form-link:hover {
+        color: #6FDB9E;
+    }
+    
+    .hero {
+        /*background-size: 150%;*/
+        background-repeat: no-repeat;
+        background-position: left;
+        -webkit-animation: slide 40s ease;
+        transform: translate3d(0, 0, 0);
+        /*height: 100vh;*/
+        height: 50px;
+    }
+    
+    /*.hero:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(76, 56, 75, .8)
+    }*/
+    
+    @-webkit-keyframes slide {
+        0% {
+            background-position: left;
+        }
+        50% {
+            background-position: right;
+        }
+        100% {
+            background-position: left;
+        }
+    }
+    
+    .btn {
+        background: #4C384B;
+        color: white;
+        text-decoration: none;
+        padding: 10px 40px;
+        margin: 20px 0;
+        display: inline-block;
+        border-radius: 3px;
+        font-size: 20px;
+    }
+    .hero__content {
+  z-index: 101;
+  position: relative;
+}
+    </style>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <link rel="stylesheet" href="./material.min.css">
+    <script src="./material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script>
+    function mainmenu() {
+        window.location.href = "landing.html";
+    }
+    </script>
+</head>
+
+<body ng-app="starter" class="hero">
+    <div style="margin-top: 50px" class="hero__content">
+        <div>
+            <img src="img/px2.png" width="40%" style="margin-left: 90px;">
+        </div>
+        <form id="sign-in" style="text-align: center; margin-top: -10px; width: 280px;">
+            <input class="info" id="username" type="text" name="username" placeholder="username" style="font-size: 16px">
+            <input class="info" id="password" type="password" name="password" placeholder="password" style="font-size: 16px">
+            <button id="login" type="submit" style="font-size: 16px" onclick="mainmenu()">Login</button>
+            <a href="#" class="form-link" style="font-size: 16px">Sign Up</a>
+            <a href="#" class="form-link" style="font-size: 16px">Forgot Password?</a>
+        </form>
+    </div>
+</body>
+
+</html>
